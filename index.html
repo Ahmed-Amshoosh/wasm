@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وسم | وللتأثير بقية</title>
+
+    <!-- Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-purple: #6B2D8F;
+            --primary-blue: #2D5B8F;
+            --primary-teal: #2D8F8F;
+            --accent-gold: #D4AF37;
+            --gradient-primary: linear-gradient(135deg, #6B2D8F 0%, #2D5B8F 50%, #2D8F8F 100%);
+            --gradient-secondary: linear-gradient(135deg, #2D8F8F 0%, #2D5B8F 100%);
+            --light-bg: #F8F9FA;
+            --dark-text: #1A1A1A;
+            --light-text: #6C757D;
+            --white: #FFFFFF;
+            --soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+        /* تعريف الخطوط المحلية - The Year of Handicrafts */
+        @font-face {
+            font-family: 'TheYearofHandicrafts';
+            src: url('fonts/TheYearofHandicrafts-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TheYearofHandicrafts';
+            src: url('fonts/TheYearofHandicrafts-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TheYearofHandicrafts';
+            src: url('fonts/TheYearofHandicrafts-SemiBold.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TheYearofHandicrafts';
+            src: url('fonts/TheYearofHandicrafts-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TheYearofHandicrafts';
+            src: url('fonts/TheYearofHandicrafts-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* تطبيق الخط على جميع العناصر مع الاحتفاظ بخط احتياطي مناسب */
+        body {
+            font-family: 'TheYearofHandicrafts', 'Tajawal', sans-serif;
+        }
+
+        /* يمكنك تخصيص أوزان معينة للعناوين */
+        h1, h2, h3, h4, h5, h6,
+        .navbar-brand,
+        .btn-hero,
+        .section-title,
+        .philosophy-node h3,
+        .value-card h3,
+        .service-card h3,
+        .gate-step h4,
+        .wheel-step h4,
+        .step-title {
+            font-weight: 700; /* يستخدم SemiBold أو Bold حسب المتاح */
+        }
+
+        /* تحسين قراءة النصوص العادية */
+        p, li, .step-desc, .service-desc, .value-card p {
+            font-weight: 400; /* Regular */
+            line-height: 1.7;
+        }
+
+        /* العناوين الكبيرة جداً مثل hero-title قد تحتاج وزن أثقل */
+        .hero-title {
+            font-weight: 900; /* Black */
+        }
+
+        /* أيقونات أو عناصر خاصة */
+        .section-title {
+            font-weight: 900; /* Black لإبراز العنوان */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            width: 150px;
+        }
+
+        .navbar-brand img {
+            width: 100%;
+        }
+
+        .nav-link {
+            color: var(--dark-text);
+            font-weight: 500;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-purple);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+            background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(107, 45, 143, 0.9) 0%, rgba(45, 91, 143, 0.85) 50%, rgba(45, 143, 143, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+            color: var(--white);
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-services {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .service-item {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            margin: 0 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .service-divider {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+
+        .contact-item i {
+            color: var(--accent-gold);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-hero-primary {
+            background: var(--white);
+            color: var(--primary-purple);
+            border: 2px solid var(--white);
+        }
+
+        .btn-hero-primary:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-hero-outline:hover {
+            background: var(--white);
+            color: var(--primary-purple);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Section Styles ===== */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-light {
+            background: var(--light-bg);
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* ===== Philosophy Section ===== */
+        .philosophy-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-section .section-title {
+            background: none;
+            -webkit-text-fill-color: var(--white);
+        }
+
+        .philosophy-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .philosophy-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .philosophy-node {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .philosophy-node:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .philosophy-node .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+        }
+
+        .philosophy-node h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .philosophy-node p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .philosophy-connector {
+            position: relative;
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .philosophy-connector::before, .philosophy-connector::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .philosophy-connector::before {
+            left: -6px;
+        }
+
+        .philosophy-connector::after {
+            right: -6px;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-flow {
+                flex-direction: column;
+            }
+
+            .philosophy-connector {
+                width: 4px;
+                height: 50px;
+                transform: rotate(90deg);
+            }
+        }
+
+        /* ===== Values Section ===== */
+        .values-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            border-radius: 40px 40px 40px 0;
+            padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: var(--soft-shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transform-style: preserve-3d;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 20px 40px rgba(107, 45, 143, 0.15);
+        }
+
+        .value-card:hover::before {
+            transform: scale(1.5);
+            opacity: 0.15;
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-purple);
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card p {
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+            font-size: 1rem;
+        }
+
+        .value-decoration {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(107, 45, 143, 0.03);
+            z-index: 1;
+        }
+
+        /* ===== Services Section ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 2rem 1.5rem;
+            box-shadow: var(--soft-shadow);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(107, 45, 143, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 30px 30px 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 2.5rem;
+            box-shadow: 0 10px 20px rgba(107, 45, 143, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .service-sub {
+            font-size: 1rem;
+            color: var(--primary-teal);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: rgba(45, 143, 143, 0.1);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+        }
+
+        .service-desc {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .service-features li i {
+            color: var(--primary-teal);
+            width: 20px;
+        }
+
+        /* ===== METHODOLOGY SECTION - تصميم جديد "عجلة التأثير" ===== */
+        .methodology-section {
+            background: var(--light-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-wheel {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .wheel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 500px;
+        }
+
+        .wheel-center {
+            width: 150px;
+            height: 150px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            box-shadow: 0 15px 35px rgba(107, 45, 143, 0.4);
+            position: relative;
+            z-index: 5;
+            animation: pulse 2s infinite ease-in-out;
+            border: 4px solid var(--white);
+        }
+
+        .wheel-center span:first-child {
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .wheel-center span:last-child {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(107, 45, 143, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 25px 45px rgba(107, 45, 143, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(107, 45, 143, 0.4);
+            }
+        }
+
+        .wheel-step {
+            position: absolute;
+            width: 180px;
+            text-align: center;
+            transition: all 0.3s ease;
+            z-index: 4;
+        }
+
+        .wheel-step:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        .step-content {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 1.5rem 1rem;
+            box-shadow: var(--soft-shadow);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-primary);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+
+        .wheel-step:hover .step-content::before {
+            opacity: 1;
+        }
+
+        .step-icon {
+            font-size: 2.2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            color: var(--light-text);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        /* تحديد مواقع الخطوات حول الدائرة */
+        .step-1 {
+            top: 10%;
+            right: 20%;
+        }
+
+        .step-2 {
+            top: 15%;
+            left: 15%;
+        }
+
+        .step-3 {
+            bottom: 10%;
+            left: 15%;
+        }
+
+        .step-4 {
+            bottom: 10%;
+            right: 20%;
+        }
+        @media (max-width: 992px) {
+            .step-1 {
+                top: 10%;
+                right: 10%;
+            }
+
+            .step-2 {
+                top: 15%;
+                left: 10%;
+            }
+
+            .step-3 {
+                bottom: 10%;
+                left: 10%;
+            }
+
+            .step-4 {
+                bottom: 10%;
+                right: 10%;
+            }
+        }
+
+        /* خطوط دائرية */
+        .wheel-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border: 2px dashed rgba(45, 143, 143, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wheel-ring::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed rgba(107, 45, 143, 0.2);
+            border-radius: 50%;
+        }
+
+        .wheel-ring::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            right: 60px;
+            bottom: 60px;
+            border: 2px dashed rgba(212, 175, 55, 0.15);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .wheel-container {
+                flex-direction: column;
+                min-height: auto;
+                gap: 2rem;
+            }
+
+            .wheel-center {
+                margin: 2rem 0;
+            }
+
+            .wheel-step {
+                position: static;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .wheel-ring {
+                display: none;
+            }
+        }
+
+        /* ===== Sectors Section ===== */
+        .sectors-wave {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem 5rem;
+            margin-top: 3rem;
+        }
+
+        .sector-wave-item {
+            position: relative;
+            width: 180px;
+            text-align: center;
+        }
+
+        .sector-wave-item::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            width: 40px;
+            height: 40px;
+            border-top: 4px dashed var(--primary-teal);
+            border-right: 4px dashed var(--primary-teal);
+            border-radius: 0 50px 0 0;
+            opacity: 0.3;
+        }
+
+        .sector-wave-item:first-child::before {
+            display: none;
+        }
+
+        .sector-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-primary);
+            border-radius: 50% 50% 0 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2.5rem;
+            box-shadow: 0 10px 20px rgba(107, 45, 143, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .sector-wave-item:hover .sector-icon {
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(5deg);
+        }
+
+        .sector-wave-item h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .sector-wave-item p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ===== Promise Section ===== */
+        .promise-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promise-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .promise-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .promise-section .section-title {
+            background: none;
+            -webkit-text-fill-color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .promise-text {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            line-height: 2;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-info {
+            background: var(--white);
+            border-radius: 50px 50px 50px 0;
+            padding: 3rem;
+            box-shadow: var(--soft-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+            border-radius: 0 0 100px 0;
+        }
+
+        .contact-item-box {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-bottom: 2px dotted #eee;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item-box:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item-box:hover {
+            background: rgba(107, 45, 143, 0.02);
+            border-radius: 30px;
+        }
+
+        .contact-icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 30px 30px 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            box-shadow: 0 10px 20px rgba(107, 45, 143, 0.3);
+        }
+
+        .contact-text-box h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text-box p {
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        .contact-text-box a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .contact-text-box a:hover {
+            color: var(--primary-purple);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-logo {
+            width: 150px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .footer-logo img {
+            width: 100%;
+        }
+
+        .footer-text {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+            transform: translateY(-5px) rotate(5deg);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-services {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .service-divider {
+                display: none;
+            }
+        }
+
+        /* ===== Custom Scrollbar ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
+                <li class="nav-item"><a class="nav-link" href="#philosophy">فلسفتنا</a></li>
+                <li class="nav-item"><a class="nav-link" href="#values">قيمنا</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">خدماتنا</a></li>
+                <li class="nav-item"><a class="nav-link" href="#methodology">منهجية العمل</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sectors">قطاعاتنا</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title">وســم</h1>
+        <p class="hero-tagline">وللتأثير بقية.</p>
+        <p class="hero-services">
+            <span class="service-item">هندسة الهوية</span>
+            <span class="service-divider">|</span>
+            <span class="service-item">إدارة النمو</span>
+            <span class="service-divider">|</span>
+            <span class="service-item">الاتصال الاستراتيجي</span>
+        </p>
+        <div class="hero-contact">
+            <a href="#" class="contact-item"><i class="fas fa-globe"></i> www.wasmaltathir.sa</a>
+            <a href="#" class="contact-item"><i class="fas fa-at"></i> @wasmaltathir</a>
+        </div>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-hero btn-hero-primary">ابدأ رحلتك</a>
+            <a href="#philosophy" class="btn-hero btn-hero-outline">اعرف المزيد</a>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section id="philosophy" class="section philosophy-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">ما وراء النقطة.. تبدأ الحكاية</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">في لغة الأعمال، يظن الكثيرون أن الهدف هو
+            الوصول إلى <strong>"نقطة"</strong> النهاية، لكننا في وسم نرى أن النجاح الحقيقي يكمن في
+            <strong>(الفاصلة)</strong></p>
+        <div class="philosophy-flow" data-aos="fade-up" data-aos-delay="200">
+            <div class="philosophy-node">
+                <div class="icon"><i class="fas fa-pause"></i></div>
+                <h3>الفاصلة</h3>
+                <p>هي تلك الوقفة الذكية التي تمنحنا القوة للاستمرار</p></div>
+            <div class="philosophy-connector"></div>
+            <div class="philosophy-node">
+                <div class="icon"><i class="fas fa-chart-line"></i></div>
+                <h3>النمو المتصاعد</h3>
+                <p>نضع مشروعك في سياق نمو متصاعد</p></div>
+            <div class="philosophy-connector"></div>
+            <div class="philosophy-node">
+                <div class="icon"><i class="fas fa-link"></i></div>
+                <h3>علامة وصل</h3>
+                <p>تربط حاضركم بطموحكم المستقبلي</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section id="values" class="section section-white">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">قيمنا - أركان التأثير</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">أن نكون الشريك الذي يمنح علامتك التجارية
+            التميز والوضوح</p>
+        <div class="values-showcase">
+            <div class="value-card" data-aos="flip-right" data-aos-delay="200">
+                <div class="value-icon"><i class="fas fa-link"></i></div>
+                <h3>الوصل</h3>
+                <p>نربط علامتك بجمهورها بذكاء واحترافية، لنصنع جسوراً من الثقة والتأثير.</p>
+                <div class="value-decoration">و</div>
+            </div>
+            <div class="value-card" data-aos="flip-right" data-aos-delay="300">
+                <div class="value-icon"><i class="fas fa-eye"></i></div>
+                <h3>الوضوح</h3>
+                <p>نؤمن بالبساطة القوية والنتائج المباشرة التي لا تحتمل التأويل.</p>
+                <div class="value-decoration">ض</div>
+            </div>
+            <div class="value-card" data-aos="flip-right" data-aos-delay="400">
+                <div class="value-icon"><i class="fas fa-bolt"></i></div>
+                <h3>التأثير</h3>
+                <p>هو المحرك الأساسي لكل فكرة نطلقها أو تصميم ننفذه؛ لأن التأثير هو البصمة.</p>
+                <div class="value-decoration">ت</div>
+            </div>
+            <div class="value-card" data-aos="flip-right" data-aos-delay="500">
+                <div class="value-icon"><i class="fas fa-infinity"></i></div>
+                <h3>الاستمرارية</h3>
+                <p>نخطط للمستقبل، لنضمن أن يظل لعملنا "بقية" في ذاكرة السوق.</p>
+                <div class="value-decoration">س</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="section section-light">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">ركائز الخدمة</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">حلول متكاملة لعلامتك التجارية</p>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-flask"></i></div>
+                <h3>مختبر الهوية</h3>
+                <div class="service-sub">Identity Lab</div>
+                <p class="service-desc">نحول فكرتك إلى كيان متكامل له شخصية وصوت يفرض حضوره.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> بناء الهوية البصرية والشعارات</li>
+                    <li><i class="fas fa-check-circle"></i> رسم مسار العلامة التجارية</li>
+                    <li><i class="fas fa-check-circle"></i> تحديد نبرة الصوت وأدلة المعايير</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                <h3>محركات النمو</h3>
+                <div class="service-sub">Growth Engines</div>
+                <p class="service-desc">نضمن لرسالتك أن تمتد وتصل بفعالية، محولين الحضور إلى قوة انتشار.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> إدارة حملات التسويق والنمو</li>
+                    <li><i class="fas fa-check-circle"></i> خطط الوصول الدقيق للفئات المستهدفة</li>
+                    <li><i class="fas fa-check-circle"></i> تحليل بيانات الأثر وتطوير المسارات</li>
+                </ul>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>منصة المحتوى</h3>
+                <div class="service-sub">Content Hub</div>
+                <p class="service-desc">نصيغ السياق الذي يجعل لعلامتك صوتاً مسموعاً، ونكتب القصص التي تبقى.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> صناعة المحتوى الإبداعي والمرئي</li>
+                    <li><i class="fas fa-check-circle"></i> إدارة الصورة الذهنية والاتصال المؤسسي</li>
+                    <li><i class="fas fa-check-circle"></i> صناعة القصص التي تضمن بقاء الأثر</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Methodology Section - تصميم جديد "عجلة التأثير" -->
+<section id="methodology" class="section methodology-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">دورة الأثر</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">كيف نصنع الفرق؟ نتبع مساراً دائرياً يضمن أن
+            يكون لكل خطوة "بقية" من النجاح</p>
+
+        <div class="impact-wheel">
+            <div class="wheel-container">
+                <!-- النقطة المركزية -->
+                <div class="wheel-center">
+                    <span>الأثر</span>
+                    <span>المستمر</span>
+                </div>
+                <!-- الخطوات حول الدائرة -->
+                <div class="wheel-step step-1" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <h4>الاستقراء</h4>
+                        <p>فهم سياق العمل وتحليل الفجوات</p>
+                    </div>
+                </div>
+                <div class="wheel-step step-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-tag"></i></div>
+                        <h4>الوسم</h4>
+                        <p>البناء الإبداعي وهندسة الهوية</p>
+                    </div>
+                </div>
+                <div class="wheel-step step-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-plug"></i></div>
+                        <h4>الوصل</h4>
+                        <p>ربط العلامة بجمهورها</p>
+                    </div>
+                </div>
+                <div class="wheel-step step-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-pause-circle"></i></div>
+                        <h4>الفاصلة</h4>
+                        <p>تحليل النتائج وقياس الأثر</p>
+                    </div>
+                </div>
+                <!-- خطوط دائرية خلفية -->
+                <div class="wheel-ring"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sectors Section -->
+<section id="sectors" class="section section-white">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">قطاعات التأثير</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">أين نضع وسمنا؟</p>
+        <div class="sectors-wave">
+            <div class="sector-wave-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="sector-icon"><i class="fas fa-landmark"></i></div>
+                <h3>القطاع الحكومي</h3>
+                <p>صياغة الاتصال الذي يعكس الرؤى الوطنية</p></div>
+            <div class="sector-wave-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="sector-icon"><i class="fas fa-building"></i></div>
+                <h3>قطاع الأعمال</h3>
+                <p>هندسة الحضور الذهني والتميز التنافسي</p></div>
+            <div class="sector-wave-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="sector-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>الشركات الناشئة</h3>
+                <p>منحهم "الوسم" الأول للانطلاق الواثق</p></div>
+            <div class="sector-wave-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="sector-icon"><i class="fas fa-heart"></i></div>
+                <h3>القطاع الثالث</h3>
+                <p>تعظيم أثر الرسائل الإنسانية والمجتمعية</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Promise Section -->
+<section class="section promise-section">
+    <div class="container">
+        <div data-aos="fade-up">
+            <h2 class="section-title">لأن الأثر لا يقبل التجزئة..</h2>
+            <p class="promise-text">نعدكم بأن لا تكون علامتكم مجرد رقم عابر، بل وسماً يستقر في الذاكرة، وقصة نجاح نصيغها
+                بعناية.. لأنه مع "وسم".. وللتأثير بقية.</p>
+            <a href="#contact" class="btn-hero btn-hero-primary">تواصل معنا الآن</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section section-light">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">لنبدأ رحلة الوصل</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">نجمع بين الخبرة الإعلامية والذكاء التسويقي
+            لنحول حضوركم إلى وسم ثابت</p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-item-box">
+                        <div class="contact-icon-box"><i class="fas fa-globe"></i></div>
+                        <div class="contact-text-box"><h5>الموقع الإلكتروني</h5>
+                            <p><a href="#">www.wasmaltathir.sa</a></p></div>
+                    </div>
+                    <div class="contact-item-box">
+                        <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text-box"><h5>البريد الإلكتروني</h5>
+                            <p><a href="mailto:info@wasmaltathir.sa">info@wasmaltathir.sa</a></p></div>
+                    </div>
+                    <div class="contact-item-box">
+                        <div class="contact-icon-box"><i class="fas fa-at"></i></div>
+                        <div class="contact-text-box"><h5>منصات التواصل</h5>
+                            <p><a href="#">@wasmaltathir</a></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <a class="footer-logo" href="#">
+            <img src="logo.png">
+        </a>
+        <div class="text-center mb-4">
+
+            <p class="footer-text">نعمل في وسم كحلقة وصل استراتيجية، نضع الفاصلة في مسار علامتكم.<br>مانحون تدفق التأثير
+                واستمرارية الاتصال.</p></div>
+        <div class="social-links"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a><a href="#"
+                                                                                                       class="social-link"><i
+                class="fab fa-linkedin-in"></i></a><a href="#" class="social-link"><i
+                class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom"><p>جميع الحقوق محفوظة © ٢٠٢٤ مؤسسة وسم للتأثير</p></div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({duration: 800, easing: 'ease-in-out', once: true, offset: 100});
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+        }
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+        });
+    });
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 200) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) bootstrap.Collapse.getInstance(navbarCollapse).hide();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الريادة الاجتماعية</title>
+    
+    <!-- Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+    <style>
+        :root {
+            --primary-color: #2C5F7C;
+            --secondary-color: #1A3A4A;
+            --accent-color: #D4AF37;
+            --teal-color: #4DB8B8;
+            --light-bg: #F8F9FA;
+            --dark-text: #1A1A1A;
+            --light-text: #6C757D;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--white);
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            width: 150px;
+        }
+        .navbar-brand img{
+        width: 100%;
+        }
+        .nav-link {
+            color: var(--dark-text);
+            font-weight: 500;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(44, 95, 124, 0.7), rgba(26, 58, 74, 0.8)),
+                        url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* Decorative Elements */
+        .hero-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-decoration-1 {
+            top: 10%;
+            right: 10%;
+            transform: rotate(15deg);
+        }
+
+        .hero-decoration-2 {
+            bottom: 20%;
+            left: 15%;
+            transform: rotate(-10deg);
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(15deg); }
+            50% { transform: translateY(-20px) rotate(15deg); }
+        }
+
+        /* ===== Section Styles ===== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-light {
+            background: var(--light-bg);
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== About Section ===== */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+        }
+
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .partner-logo {
+            height: 60px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+        }
+
+        /* ===== Vision Section ===== */
+        .vision-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vision-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .vision-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .vision-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 300px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .vision-card-image {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary-color), var(--teal-color));
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* ===== Why Section ===== */
+        .why-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem;
+            max-width: 300px;
+        }
+
+        .why-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--teal-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transform: rotate(-10deg);
+        }
+
+        .why-icon i {
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .why-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .why-text {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* ===== Statistics Section ===== */
+        .statistics-section {
+            background: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--teal-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--light-text);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ===== Goals Section ===== */
+        .goals-section {
+            background: var(--light-bg);
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .goal-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .goal-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--teal-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .goal-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .goal-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .goal-text {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Pathways Section ===== */
+        .pathways-section {
+            background: var(--white);
+            position: relative;
+        }
+
+        .pathways-timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .pathway-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--teal-color));
+            color: var(--white);
+            padding: 1.5rem 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .pathway-item:hover {
+            transform: scale(1.05);
+        }
+
+        .pathway-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== Sustainability Section ===== */
+        .sustainability-section {
+            background: var(--light-bg);
+        }
+
+        .sustainability-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sustainability-list {
+            list-style: none;
+            padding: 0;
+            margin: 3rem 0;
+        }
+
+        .sustainability-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sustainability-list li i {
+            color: var(--teal-color);
+            font-size: 1.2rem;
+        }
+
+        /* ===== News Section ===== */
+        .news-section {
+            background: var(--white);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .news-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--teal-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            color: var(--teal-color);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .news-text {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ===== Partners Section ===== */
+        .partners-section {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-logo-item {
+            height: 80px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .partner-logo-item:hover {
+            opacity: 1;
+        }
+
+        /* ===== Locations Section ===== */
+        .locations-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .location-map {
+            height: 300px;
+            background: #e9ecef;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .location-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--teal-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img  src="logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vision">رؤيتنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why">لماذا الريادة؟</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">الأخبار</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <style>
+        /* ===== Hero Section Updates ===== */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(107, 45, 143, 0.9) 0%, rgba(45, 91, 143, 0.85) 50%, rgba(45, 143, 143, 0.8) 100%),
+            url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-tagline-inline {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            opacity: 0.95;
+        }
+
+        /* Services Tagline */
+        .hero-services {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .service-item {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-divider {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Contact Info */
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-hero {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-hero-primary {
+            background: var(--accent-color);
+            color: var(--primary-purple);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-hero-primary:hover {
+            background: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-hero-outline:hover {
+            background: var(--white);
+            color: var(--primary-purple);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-tagline-inline {
+                font-size: 2rem;
+            }
+
+            .hero-services {
+                font-size: 1.2rem;
+            }
+
+            .hero-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-item {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline-inline {
+                font-size: 1.5rem;
+            }
+
+            .hero-services {
+                font-size: 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .service-divider {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-hero {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-decoration hero-decoration-1"></div>
+        <div class="hero-decoration hero-decoration-2"></div>
+
+        <div class="hero-content" data-aos="fade-up">
+            <!-- Main Title -->
+            <h1 class="hero-title">
+                وســم
+                <span class="hero-tagline-inline">.. وللتأثير بقية.</span>
+            </h1>
+
+            <!-- Services Tagline -->
+            <p class="hero-services">
+                <span class="service-item">هندسة الهوية</span>
+                <span class="service-divider">|</span>
+                <span class="service-item">إدارة النمو</span>
+                <span class="service-divider">|</span>
+                <span class="service-item">الاتصال الاستراتيجي</span>
+            </p>
+
+            <!-- Contact Info -->
+            <div class="hero-contact">
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://www.wasmaltathir.sa" target="_blank">www.wasmaltathir.sa</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-at"></i>
+                    <a href="https://twitter.com/wasmaltathir" target="_blank">@wasmaltathir</a>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-hero btn-hero-primary">ابدأ رحلتك</a>
+                <a href="#philosophy" class="btn-hero btn-hero-outline">اعرف المزيد</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- About & Philosophy Section -->
+    <section id="about" class="section section-white">
+        <div class="container">
+            <!-- Main Title -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" data-aos="fade-up">من نحن؟</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        نعمل في وسم كحلقة وصل استراتيجية، نضع الفاصلة في مسار علامتكم
+                    </p>
+                </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="about-content">
+                        <p class="about-text" style="font-size: 1.2rem; line-height: 2.2; color: var(--light-text);">
+                            مؤسسة <strong>"وسم"</strong> هي شريكك الاستراتيجي في رحلة بناء العلامة التجارية والنمو المستدام.
+                            نجمع بين الخبرة الإعلامية والذكاء التسويقي لنحول حضوركم إلى <strong>وسم ثابت</strong>،
+                            يربط حاضركم بطموحكم المستقبلي.
+                        </p>
+                        <p class="about-text" style="font-size: 1.1rem; line-height: 2; color: var(--light-text);">
+                            نؤمن بأن كل علامة تجارية تستحق أن تكون أكثر من مجرد اسم في السوق..
+                            تستحق أن تكون <strong>وسمًا</strong> يُذكر، وقصة تُحكى، وأثرًا يبقى.
+                        </p>
+
+                        <!-- Contact Info Box -->
+                        <div class="contact-box mt-4 p-4 rounded-3" style="background: linear-gradient(135deg, rgba(107, 45, 143, 0.05) 0%, rgba(45, 143, 143, 0.05) 100%); border: 1px solid rgba(107, 45, 143, 0.2);">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fas fa-globe" style="color: var(--primary-purple);"></i>
+                                        <a href="https://www.wasmaltathir.sa" class="text-decoration-none" style="color: var(--primary-purple); font-weight: 600;">www.wasmaltathir.sa</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fas fa-at" style="color: var(--primary-purple);"></i>
+                                        <a href="mailto:info@wasmaltathir.sa" class="text-decoration-none" style="color: var(--primary-purple); font-weight: 600;">info@wasmaltathir.sa</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fab fa-twitter" style="color: var(--primary-purple);"></i>
+                                        <a href="#" class="text-decoration-none" style="color: var(--primary-purple); font-weight: 600;">@wasmaltathir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="fade-right">
+                    <div class="logo-container position-relative">
+                        <div class="logo-circle" style="width: 350px; height: 350px; margin: 0 auto; background: linear-gradient(135deg, rgba(107, 45, 143, 0.1) 0%, rgba(45, 143, 143, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(107, 45, 143, 0.2);">
+                            <img style="width: 90%; height: auto;" src="images/img_1.png" alt="وسم">
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="decorative-dot" style="position: absolute; top: 0; right: 0; width: 20px; height: 20px; background: var(--primary-purple); border-radius: 50%;"></div>
+                        <div class="decorative-dot" style="position: absolute; bottom: 0; left: 0; width: 30px; height: 30px; background: var(--primary-teal); border-radius: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy Section -->
+            <div class="philosophy-section mt-5 pt-5" style="border-top: 2px solid rgba(107, 45, 143, 0.1);">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h3 class="section-title" data-aos="fade-up" style="font-size: 2.5rem;">ما وراء النقطة.. تبدأ الحكاية</h3>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" style="max-width: 800px;">
+                            في لغة الأعمال، يظن الكثيرون أن الهدف هو الوصول إلى <strong>"نقطة"</strong> النهاية،
+                            لكننا في وسم نرى أن النجاح الحقيقي يكمن في <strong>(الفاصلة)</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Philosophy Cards -->
+                <div class="row g-4">
+                    <!-- Card 1: The Pause -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="philosophy-card text-center p-4 h-100" style="background: linear-gradient(135deg, rgba(107, 45, 143, 0.05) 0%, rgba(107, 45, 143, 0.1) 100%); border-radius: 20px; border: 1px solid rgba(107, 45, 143, 0.15); transition: all 0.3s ease;">
+                            <div class="philosophy-icon mb-4" style="width: 80px; height: 80px; margin: 0 auto; background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-pause" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="color: var(--primary-purple); font-size: 1.3rem;">الفاصلة</h4>
+                            <p class="text-muted" style="line-height: 1.8;">
+                                هي تلك الوقفة الذكية التي تمنحنا القوة للاستمرار، والربط بين ما أنجزناه وبين ما نطمح إليه
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Continuous Growth -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="philosophy-card text-center p-4 h-100" style="background: linear-gradient(135deg, rgba(45, 91, 143, 0.05) 0%, rgba(45, 91, 143, 0.1) 100%); border-radius: 20px; border: 1px solid rgba(45, 91, 143, 0.15); transition: all 0.3s ease;">
+                            <div class="philosophy-icon mb-4" style="width: 80px; height: 80px; margin: 0 auto; background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-chart-line" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="color: var(--primary-blue); font-size: 1.3rem;">النمو المتصاعد</h4>
+                            <p class="text-muted" style="line-height: 1.8;">
+                                نحن لا ننهي مشروعك، بل نضعه في سياق نمو متصاعد؛ لضمان تدفق التأثير وبقاء علامتك
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Connection Mark -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="philosophy-card text-center p-4 h-100" style="background: linear-gradient(135deg, rgba(45, 143, 143, 0.05) 0%, rgba(45, 143, 143, 0.1) 100%); border-radius: 20px; border: 1px solid rgba(45, 143, 143, 0.15); transition: all 0.3s ease;">
+                            <div class="philosophy-icon mb-4" style="width: 80px; height: 80px; margin: 0 auto; background: linear-gradient(135deg, var(--primary-teal), var(--primary-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-link" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="color: var(--primary-teal); font-size: 1.3rem;">علامة وصل</h4>
+                            <p class="text-muted" style="line-height: 1.8;">
+                                علامة وصل لا تقبل الانقطاع، تربط حاضركم بطموحكم المستقبلي
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this CSS for hover effects -->
+    <style>
+        .philosophy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(107, 45, 143, 0.15);
+        }
+
+        .philosophy-icon {
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-card:hover .philosophy-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .logo-container {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .contact-box {
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover {
+            box-shadow: 0 10px 40px rgba(107, 45, 143, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .logo-circle {
+                width: 250px !important;
+                height: 250px !important;
+            }
+        }
+    </style>
+
+    <!-- Vision Section -->
+    <section id="vision" class="section vision-section">
+        <div class="container">
+            <div class="vision-content">
+                <h2 class="vision-title" data-aos="fade-up">رؤيتنا</h2>
+                <div class="vision-cards">
+                    <div class="vision-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="vision-card-image"></div>
+                        <h3 class="vision-card-title">ريادة التأثير الاجتماعي للمستدام</h3>
+                    </div>
+                    <div class="vision-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="vision-card-image"></div>
+                        <h3 class="vision-card-title">رسالتنا</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section id="why" class="section section-white">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">لماذا الريادة الاجتماعية؟</h2>
+            <div class="why-cards mt-5">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="why-title">ابتكار حلول اجتماعية بمناهج عمل جديدة</h3>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="why-title">صناعة نموذج واعد في الريادة الاجتماعية</h3>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="why-title">العمل غير الربحي واحترافية العمل التجاري</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section statistics-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">شركة وســـم <br>
+                في أرقـــــــــام؟</h2>
+
+            <div class="stats-grid">
+
+                <!-- 1 -->
+                <div class="stat-item">
+                    <img src="images/statistics-1.png" class="stat-img" alt="">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">
+                        كيانات اجتماعية<br>
+                        تم تأسيسها
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="stat-item">
+                    <img src="images/statistics-2.png" class="stat-img" alt="">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">
+                        منتج اجتماعي<br>
+                        نوعي
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="stat-item">
+                    <img src="images/statistics-3.png" class="stat-img" alt="">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">
+                        عام خبرة<br>
+                        في القطاع<br>
+                        غير الربحي
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="stat-item">
+                    <img src="images/statistics-4.png" class="stat-img" alt="">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">
+                        كتاب في<br>
+                        مجال العمل<br>
+                        الاجتماعي
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="stat-item">
+                    <img src="images/statistics-5.png" class="stat-img" alt="">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">
+                        دراسة بحثية<br>
+                        ودليل علمي<br>
+                        ومقياس
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="stat-item">
+                    <img src="images/statistics-6.png" class="stat-img" alt="">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">
+                        ساعة استشارية<br>
+                        للأفراد والكيانات
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="stat-item">
+                    <img src="images/statistics-7.png" class="stat-img" alt="">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">
+                        متدرب في<br>
+                        مجالات تنموية<br>
+                        متنوعة
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="stat-item">
+                    <img src="images/statistics-8.png" class="stat-img" alt="">
+                    <div class="stat-number">1,250+</div>
+                    <div class="stat-label">
+                        برنامج استشاري<br>
+                        وتدريبي لمنظمات<br>
+                        غير ربحية
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Goals Section -->
+    <section class="section goals-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">أهدافنا</h2>
+            <div class="goals-grid mt-5">
+                <div class="goal-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="goal-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="goal-title">اجتماعية متخصصة</h3>
+                    <p class="goal-text">نقدم حلولاً مبتكرة للقطاع غير الربحي</p>
+                </div>
+                <div class="goal-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="goal-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="goal-title">الاجتماعية</h3>
+                    <p class="goal-text">نسعى لتحقيق أثر مجتمعي مستدام</p>
+                </div>
+                <div class="goal-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="goal-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="goal-title">الاجتماعية</h3>
+                    <p class="goal-text">ندعم المبادرات الاجتماعية الناشئة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pathways Section -->
+    <section class="section pathways-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">مسارات شركة الريادة الاجتماعية</h2>
+            <div class="pathways-timeline">
+                <div class="pathway-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pathway-title">ريادة التدريب</div>
+                </div>
+                <div class="pathway-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pathway-title">ريادة التقنية</div>
+                </div>
+                <div class="pathway-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pathway-title">ريادة الاستشارات</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="section sustainability-section">
+        <div class="container">
+            <div class="sustainability-content">
+                <h2 class="section-title" data-aos="fade-up">نماذج الاستدامة في شركة الريادة الاجتماعية</h2>
+                <ul class="sustainability-list">
+                    <li data-aos="fade-right" data-aos-delay="100">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>عوائد الكيانات الاجتماعية</span>
+                    </li>
+                    <li data-aos="fade-right" data-aos-delay="200">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>عوائد الأصول الاستثمارية والأوقاف</span>
+                    </li>
+                    <li data-aos="fade-right" data-aos-delay="300">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>عوائد المشاريع</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .newsSwiper .swiper-slide {
+            height: auto;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+    </style>
+    <!-- News Section -->
+    <section id="news" class="section news-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">الأخبار</h2>
+
+            <div class="swiper newsSwiper">
+                <div class="swiper-wrapper">
+
+                    <!-- خبر 1 -->
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80">
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">٢٠٢٤/٠١/١٥</div>
+                                <h3 class="news-title">توقيع مذكرة تفاهم مع مجلس الحج والعمرة</h3>
+                                <p class="news-text">في إطار سعي المركز الوطني لتنمية القطاع غير الربحي لتعزيز الشراكات...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- خبر 2 -->
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80">
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">٢٠٢٤/٠١/١٠</div>
+                                <h3 class="news-title">انطلاق النسخة ٤٥ من برنامج الكفاءة القيادية</h3>
+                                <p class="news-text">أطلقت الريادة الاجتماعية برنامجها القيادي المتقدم...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- خبر 3 -->
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1595185015802-1681373d20c3?auto=format&fit=crop&w=600&q=80">
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">٢٠٢٤/٠١/٠٥</div>
+                                <h3 class="news-title">شراكة استراتيجية بين شركة الريادة وجامعة الملك سعود</h3>
+                                <p class="news-text">تم توقيع اتفاقية شراكة استراتيجية لتعزيز البحث العلمي...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- خبر 2 -->
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80">
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">٢٠٢٤/٠١/١٠</div>
+                                <h3 class="news-title">انطلاق النسخة ٤٥ من برنامج الكفاءة القيادية</h3>
+                                <p class="news-text">أطلقت الريادة الاجتماعية برنامجها القيادي المتقدم...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- خبر 4 -->
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80">
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">٢٠٢٣/١٢/٢٠</div>
+                                <h3 class="news-title">إطلاق مبادرة تطوير الكوادر البشرية</h3>
+                                <p class="news-text">أطلقت الريادة الاجتماعية مبادرة جديدة لتطوير الكوادر...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- نقاط تنقل -->
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var swiper = new Swiper(".newsSwiper", {
+                loop: true,
+                spaceBetween: 30,
+
+                // افتراضي (لو ما انطبق أي breakpoint)
+                slidesPerView: 1,
+
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    },
+                    1200: {
+                        slidesPerView: 4   // 👈 هنا الشاشات الكبيرة
+                    }
+                },
+
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                }
+            });
+
+        });
+    </script>    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">شركاء النجاح</h2>
+
+            <div class="swiper partnersSwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-1.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-12.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-3.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-6.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-7.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-8.png" class="partner-logo-item">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/partners-3.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-6.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-7.png" class="partner-logo-item">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="images/partners-8.png" class="partner-logo-item">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="locations-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">مكاتبنا</h2>
+            <div class="locations-grid mt-5">
+                <div class="location-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.0!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ5LjAiTiA0NsKwNDAnMzEuMSJF!5e0!3m2!1sar!2ssa!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="location-info">
+                        <h3 class="location-title">مكتب الرياض</h3>
+                        <p class="text-muted">طريق الملك فهد، الرياض، المملكة العربية السعودية</p>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.0!2d39.1925!3d21.4858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDI5JzA4LjkiTiAzOcKwMTEnMzMuMCJF!5e0!3m2!1sar!2ssa!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="location-info">
+                        <h3 class="location-title">مكتب جدة</h3>
+                        <p class="text-muted">طريق الملك عبد العزيز، جدة، المملكة العربية السعودية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                    <a class="navbar-brand" href="#">
+                        <img  src="logo.png">
+                    </a>
+                <div class="footer-links">
+                    <a href="#home">الرئيسية</a>
+                    <a href="#about">من نحن</a>
+                    <a href="#vision">رؤيتنا</a>
+                    <a href="#news">الأخبار</a>
+                    <a href="#contact">تواصل معنا</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © ٢٠٢٤ شركة الريادة الاجتماعية</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".partnersSwiper", {
+            loop: true,
+            speed: 4000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            spaceBetween: 40,
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                576: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+                992: {
+                    slidesPerView: 6,
+                },
+                1200: {
+                    slidesPerView: 8,
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
